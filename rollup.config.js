@@ -1,8 +1,8 @@
-import { terser } from 'rollup-plugin-terser'
-import { nodeResolve } from '@rollup/plugin-node-resolve'
+/* import { terser } from 'rollup-plugin-terser' */
 import commonjs from '@rollup/plugin-commonjs'
-import copy from 'rollup-plugin-copy'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 import nodePolyfills from 'rollup-plugin-polyfill-node'
+/* import copy from 'rollup-plugin-copy' */
 
 export default {
   input: 'src/index.mjs',
@@ -17,12 +17,12 @@ export default {
   // so we must declare it as an external dependency (to be resolved at runtime).
   external: ['./slug.txt'],
   plugins: [
-    commonjs(),
     nodePolyfills(),
     nodeResolve({ browser: true, preferBuiltins: false }),
-    terser(),
+    commonjs(),
+    /* terser(),
     copy({
       targets: [{ src: './src/slug.txt', dest: './dist/' }],
-    }),
+    }), */
   ],
 }

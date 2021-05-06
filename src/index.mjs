@@ -1,4 +1,4 @@
-import { Secret, sign, verify as verifyCb, VerifyOptions } from 'jsonwebtoken'
+import { sign } from 'jsonwebtoken'
 import slug from 'slug.txt'
 
 export default {
