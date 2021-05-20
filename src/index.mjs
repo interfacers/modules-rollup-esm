@@ -1,5 +1,4 @@
 import { sign } from 'jsonwebtoken'
-import slug from 'slug.txt'
 
 export default {
   async fetch(request, env) {
@@ -22,5 +21,5 @@ async function handleRequest(request, env) {
 
   console.log(token)
 
-  return new Response(slug)
+  return new Response("Hello World!")
 }
